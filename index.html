@@ -10,8 +10,8 @@
   <body onload="init()">
     <div class="head">
       <div class="menu">
-        <a href="#home" class="menuitem clickable-menuitem">HOME</a>
-        <a href="#amqstats" class="menuitem clickable-menuitem">STATS</a>
+        <a href="#home" id="link-home" onclick="changepage(event)" class="menuitem clickable-menuitem">HOME</a>
+        <a href="#amqstats" id="link-stats" onclick="changepage(event)" class="menuitem clickable-menuitem">STATS</a>
       </div>
     </div>
     <div class="content">
