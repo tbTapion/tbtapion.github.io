@@ -8,7 +8,6 @@
     <script src="/scripts/main.js">
     </script>
     <script>
-        init();
       function loadFirebase(){
         var config = {
           apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
@@ -21,7 +20,7 @@
         firebase.initializeApp(config);
       }</script>
   </head>
-  <body onload="init()">
+  <body onload="loadFirebase()">
     <div class="head">
       <div class="menu">
         <a href="" id="link-home" class="menuitem clickable-menuitem">HOME</a>

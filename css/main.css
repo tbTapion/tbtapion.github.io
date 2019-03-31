@@ -2,8 +2,19 @@ body {
     background-color:#eeeeee;
 }
 
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(50, 80, 50);
+}
+
+.project-link{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(60, 60, 60);
+}
+
 .head {
-    background-color:rgb(41, 41, 41);
+    background-color:rgb(40, 40, 40);
     position:fixed;
     top:0px; 
     left:0px;

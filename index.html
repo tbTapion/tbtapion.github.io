@@ -3,22 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="/scripts/main.js">
-    </script>
-    <script> 
-      function loadFirebase(){
-        var config = {
-          apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
-          authDomain: "amqstats.firebaseapp.com",
-          databaseURL: "https://amqstats.firebaseio.com",
-          projectId: "amqstats",
-          storageBucket: "amqstats.appspot.com",
-          messagingSenderId: "327250267342"
-        };
-        firebase.initializeApp(config);
-      }</script>
   </head>
   <body onload="init()">
     <div class="head">
@@ -28,9 +12,9 @@
       </div>
     </div>
     <div class="content">
-        <div id="home">
-            THIS IS HOME
-        </div>
+        <h1>Projects</h1>
+        <a href="stats.html" class="project-link">AMQ Stats</a>
+        <a href="" class="project-link">Overlay</a>
     </div>
   </body>
 </html>
