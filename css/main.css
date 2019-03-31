@@ -1,5 +1,5 @@
 body {
-    background-color:#252533;
+    background-color:#eeeeee;
 }
 
 .head {
@@ -7,7 +7,7 @@ body {
     top:0px;
     left:0px;
     width:100%;
-    background-color:rgb(143, 143, 182);
+    background-color:rgb(41, 41, 41);
 }
 
 .menu {
@@ -19,7 +19,7 @@ body {
 .menuitem{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
-    color:#252533;
+    color:#2cbcff;
     float:left;
     padding-left:1%;
     padding-right:1%;
