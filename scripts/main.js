@@ -1,4 +1,8 @@
-
+database.collection('users').get().then((snapshot, value) => {
+    snapshot.docs.forEach(doc => {
+        renderUser(doc);
+    });
+});
 
 function renderUser(doc){
     var div = document.createElement("div");
@@ -13,10 +17,5 @@ function renderUser(doc){
 }
 
 function updateSearch(value){
-    database.collection('users').where("username", 'array-contains', value.toString()).get().then((snapshot, value) => {
-        snapshot.docs.forEach(doc => {
-            console.log(doc);
-            renderUser(doc);
-        });
-    });
+    
 }
