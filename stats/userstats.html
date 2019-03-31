@@ -16,7 +16,7 @@
         firebase.initializeApp(config);
         const fsDatabase = firebase.firestore();
         fsDatabase.collection('users').where("username", "==", window.location.hash.substring(1)).get().then((snapshot, value) => {
-            if(shapshot.docs.numChildren() > 0){
+            if(snapshot.docs.length > 0){
                 snapshot.docs.forEach(doc => {
                     renderUser(doc);
                 });
