@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="scripts/main.js"></script>
   </head>
   <body onload="init()">
     <div class="head">
       <div class="menu">
-        <div class="menuitem clickable-menuitem">HOME</div>
-        <div class="menuitem clickable-menuitem">STATS</div>
+        <a href="#home" class="menuitem clickable-menuitem">HOME</a>
+        <a href="#amqstats" class="menuitem clickable-menuitem">STATS</a>
       </div>
     </div>
-    <div>
-
+    <div class="content">
+      <div id="amqstats">
+        THIS IS AMQ STATS
+      </div>
+      <div id="home">
+        THIS IS HOME
+      </div>
     </div>
   </body>
 </html>

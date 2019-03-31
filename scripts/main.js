@@ -1,5 +1,3 @@
-require("https://www.gstatic.com/firebasejs/5.9.2/firebase.js");
-
 function setupdependencies(){
     var fileref=document.createElement('script');
     fileref.setAttribute("type","text/javascript");
@@ -21,4 +19,7 @@ function init(){
       };
       firebase.initializeApp(config);
     
+    var hash = document.location.hash;
+    document.getElementById("amqstats").hidden = (hash == "amqstats");
+    document.getElementById("home").hidden = (hash == "amqstats");
 }

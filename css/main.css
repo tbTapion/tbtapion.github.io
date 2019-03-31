@@ -3,11 +3,18 @@ body {
 }
 
 .head {
-    position: absolute;
-    top:0px;
+    background-color:rgb(41, 41, 41);
+    position:fixed;
+    top:0px; 
     left:0px;
     width:100%;
-    background-color:rgb(41, 41, 41);
+}
+
+.content{
+    width:60%;
+    padding-top: 5%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .menu {
@@ -23,6 +30,7 @@ body {
 .clickable-menuitem{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
+    text-decoration: none;
     color:#2cbcff;
     padding-left:1%;
     padding-right:1%;
