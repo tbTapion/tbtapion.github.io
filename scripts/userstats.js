@@ -6,7 +6,7 @@ function renderUser(doc){
     var numberofgames = values.numberofgames;
 
     document.getElementById("username").innerHTML = username;
-    document.getElementById("correctguesses").innerHTML = "Correct Guesses: " + correctguesses;
-    document.getElementById("frommal").innerHTML = "From Anime List: " + frommal;
-    document.getElementById("numberofgames").innerHTML = "Number of Games:" + numberofgames;
+    document.getElementById("correctguesses").innerHTML = correctguesses;
+    document.getElementById("frommal").innerHTML = frommal;
+    document.getElementById("numberofgames").innerHTML = numberofgames;
 }

@@ -105,7 +105,6 @@ h1 {
     overflow:auto;
     top:1%;
     width:95%;
-    background-color: #4e4e4e;
     margin-left:auto;
     margin-right:auto;
     height: fit-content;
@@ -115,20 +114,30 @@ h1 {
     position: relative;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
-    color:#EEEEEE;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 2%;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .database-field{
-    position: relative;
-    display: block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 150%;
-    color:#EEEEEE;
-    background-color: rgb(26, 26, 26);
-    width:80%;
-    margin-left: auto;
+    display:block;
+    width:50%;
     margin-right: auto;
+    margin-left:auto;
+    margin-top:1%;
+    margin-bottom:1%;
+    background-color:rgb(180, 250, 255);
+    box-shadow: 0px 1px 3px 1px #00000052;
+    border-radius: 10px;
+    padding-left:1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:20px;
+    text-align: center;
+}
+
+.database-stats{
+    display: inline-block;
+    width:48%;
 }
