@@ -3,13 +3,14 @@ body {
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     color:rgb(50, 80, 50);
 }
 
 .project-link{
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     color:rgb(60, 60, 60);
 }
 
