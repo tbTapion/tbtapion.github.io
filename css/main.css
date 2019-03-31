@@ -80,13 +80,14 @@ h1 {
     float: left;
     width:23%;
     margin:1%;
-    background-color:rgb(150, 200, 200);
+    background-color:rgb(180, 250, 255);
     cursor:pointer;
     box-shadow: 0px 1px 3px 1px #00000052;
+    border-radius: 10px;
 }
 
 #result-box:hover{
-    color:#b8e9ff;
+    color:#2cbcff;
 }
 
 #result-text {
@@ -96,6 +97,7 @@ h1 {
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .userstats{
