@@ -3,6 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="../scripts/userstats.js">
+    </script>
+    <script>
+
+    var firebase;
+        var config = {
+          apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
+          authDomain: "amqstats.firebaseapp.com",
+          databaseURL: "https://amqstats.firebaseio.com",
+          projectId: "amqstats",
+          storageBucket: "amqstats.appspot.com",
+          messagingSenderId: "327250267342"
+        };
+        firebase.initializeApp(config);
+      
+        const database = firebase.firestore();
+        database.collection('users').where("username", "", window.location.hash.substring(1)).get().then((snapshot, value) => {
+            snapshot.docs.forEach(doc => {
+                renderUser(doc);
+            });
+        });
+      </script>
   </head>
   <body onload="init()">
     <div class="head">

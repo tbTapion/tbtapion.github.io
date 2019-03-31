@@ -6,8 +6,8 @@ function renderUser(doc){
     name.id = 'result-text';
     div.id = "result-box";
     div.onclick = function () {
-        window.location.pathname = "/stats/userstats.html";
-        window.location.hash = doc.data().username;
+        window.location.href = "/stats/userstats.html#" + name.innerHTML;
+        location.reload();
     };
     div.appendChild(name);
 
