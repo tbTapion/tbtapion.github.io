@@ -7,8 +7,6 @@
     <script src="../scripts/userstats.js">
     </script>
     <script>
-
-            var firebase;
                 var config = {
                   apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
                   authDomain: "amqstats.firebaseapp.com",
@@ -19,8 +17,7 @@
                 };
                 firebase.initializeApp(config);
               
-                const database = firebase.firestore();
-                database.collection('users').where("username", "==", window.location.hash.substring(1)).get().then((snapshot, value) => {
+                firebase.firestore().collection('users').where("username", "==", window.location.hash.substring(1)).get().then((snapshot, value) => {
                     snapshot.docs.forEach(doc => {
                         renderUser(doc);
                     });
@@ -47,7 +44,7 @@
         });
       </script>
   </head>
-  <body onload="init()">
+  <body>
     <div class="head">
       <div class="menu">
         <a href="/" id="link-home" class="menuitem clickable-menuitem">HOME</a>
@@ -55,6 +52,23 @@
       </div>
     </div>
     <div class="content">
+        <div class="userstats">
+            <div class="username" id="username">
+                Placeholder
+            </div>
+            <div class="database-field">
+                <div id="numberofgames" class="database-stats">0</div>
+            </div>
+            <div class="database-field">
+                <div id="correctguesses" class="database-stats">0</div>
+            </div>
+            <div class="database-field">
+                <div id="frommal" class="database-stats">0</div>
+            </div>
+        </div>
+        <div id="gamesin">
+
+        </div>
     </div>
   </body>
 </html>

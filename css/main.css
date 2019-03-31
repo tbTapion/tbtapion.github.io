@@ -78,8 +78,8 @@ h1 {
 
 #result-box {
     float: left;
-    width:20%;
-    margin:2.5%;
+    width:23%;
+    margin:1%;
     background-color:rgb(150, 200, 200);
     cursor:pointer;
 }
@@ -91,4 +91,37 @@ h1 {
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.userstats{
+    position: relative;
+    overflow:auto;
+    top:1%;
+    width:95%;
+    background-color: #4e4e4e;
+    margin-left:auto;
+    margin-right:auto;
+    height: fit-content;
+}
+
+.username {
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color:#EEEEEE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+}
+
+.database-field{
+    position: relative;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150%;
+    color:#EEEEEE;
+    background-color: rgb(26, 26, 26);
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
 }
