@@ -17,15 +17,19 @@ body {
 }
 
 .menuitem{
+    float:left;
+}
+
+.clickable-menuitem{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     color:#2cbcff;
-    float:left;
     padding-left:1%;
     padding-right:1%;
     margin-top:2%;
+    cursor:pointer;
 }
 
 .menuitem:hover{
-    background-color:rgb(132, 132, 158);
+    color:#a9e4ff;
 }
