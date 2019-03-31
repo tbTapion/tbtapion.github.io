@@ -82,6 +82,11 @@ h1 {
     margin:1%;
     background-color:rgb(150, 200, 200);
     cursor:pointer;
+    box-shadow: 0px 1px 3px 1px #00000052;
+}
+
+#result-box:hover{
+    color:#b8e9ff;
 }
 
 #result-text {
