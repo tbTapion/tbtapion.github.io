@@ -7,37 +7,15 @@
     <script src="../scripts/userstats.js">
     </script>
     <script>
-                var config = {
-                  apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
-                  authDomain: "amqstats.firebaseapp.com",
-                  databaseURL: "https://amqstats.firebaseio.com",
-                  projectId: "amqstats",
-                  storageBucket: "amqstats.appspot.com",
-                  messagingSenderId: "327250267342"
-                };
-                firebase.initializeApp(config);
-              
-                firebase.firestore().collection('users').where("username", "==", window.location.hash.substring(1)).get().then((snapshot, value) => {
-                    snapshot.docs.forEach(doc => {
-                        renderUser(doc);
-                    });
-                });
-              </script>
-    <script>
-
-    var firebase;
+        
         var config = {
-          apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
-          authDomain: "amqstats.firebaseapp.com",
           databaseURL: "https://amqstats.firebaseio.com",
           projectId: "amqstats",
-          storageBucket: "amqstats.appspot.com",
           messagingSenderId: "327250267342"
         };
         firebase.initializeApp(config);
-      
-        const database = firebase.firestore();
-        database.collection('users').where("username", "", window.location.hash.substring(1)).get().then((snapshot, value) => {
+        const fsDatabase = firebase.firestore();
+        fsDatabase.collection('users').where("username", "==", window.location.hash.substring(1)).get().then((snapshot, value) => {
             if(shapshot.docs.numChildren() > 0){
                 snapshot.docs.forEach(doc => {
                     renderUser(doc);

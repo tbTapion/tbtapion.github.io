@@ -9,19 +9,14 @@
     </script>
     <script>
 
-    var firebase;
-        var config = {
-          apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
-          authDomain: "amqstats.firebaseapp.com",
+          var config = {
           databaseURL: "https://amqstats.firebaseio.com",
           projectId: "amqstats",
-          storageBucket: "amqstats.appspot.com",
           messagingSenderId: "327250267342"
         };
         firebase.initializeApp(config);
-      
-        const database = firebase.firestore();
-        database.collection('users').get().then((snapshot, value) => {
+        const fsDatabase = firebase.firestore();
+        fsDatabase.collection('users').get().then((snapshot, value) => {
             snapshot.docs.forEach(doc => {
                 renderUser(doc);
             });
