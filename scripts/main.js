@@ -1,9 +1,3 @@
-database.collection('users').get().then((snapshot, value) => {
-    snapshot.docs.forEach(doc => {
-        renderUser(doc);
-    });
-});
-
 function renderUser(doc){
     var div = document.createElement("div");
     var name = document.createElement("div");
