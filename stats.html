@@ -8,7 +8,8 @@
     <script src="/scripts/main.js">
     </script>
     <script>
-      function loadFirebase(){
+
+    var firebase;
         var config = {
           apiKey: "AIzaSyD8CBsKmAom07TW_0BCYvoR3Wa0Z1sHXFo",
           authDomain: "amqstats.firebaseapp.com",
@@ -18,9 +19,11 @@
           messagingSenderId: "327250267342"
         };
         firebase.initializeApp(config);
-      }</script>
+      
+        const database = firebase.firestore();
+      </script>
   </head>
-  <body onload="loadFirebase()">
+  <body>
     <div class="head">
       <div class="menu">
         <a href="/" id="link-home" class="menuitem clickable-menuitem">HOME</a>
@@ -30,6 +33,7 @@
     <div class="content">    
         <div id="amqstats">
             <input onchange="updateSearch(this.value)" class="usersearch" type="text" placeholder="Search...">
+            <div id="searchResults"></div>
         </div>
     </div>
   </body>
