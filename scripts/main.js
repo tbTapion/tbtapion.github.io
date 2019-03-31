@@ -7,7 +7,7 @@ function renderUser(doc){
     div.id = "result-box";
     div.onclick = function () {
         window.location.href = "/stats/userstats.html#" + name.innerHTML;
-        location.reload();
+        window.location.reload();
     };
     div.appendChild(name);
 
