@@ -38,9 +38,16 @@
       
         const database = firebase.firestore();
         database.collection('users').where("username", "", window.location.hash.substring(1)).get().then((snapshot, value) => {
-            snapshot.docs.forEach(doc => {
-                renderUser(doc);
-            });
+            if(shapshot.docs.numChildren() > 0){
+                snapshot.docs.forEach(doc => {
+                    renderUser(doc);
+                });
+            }else{
+                document.getElementById("userstats").hidden = true;
+                document.getElementById("username").hidden = true;
+                document.getElementsByClassName("database-field").hidden = true;
+
+            }
         });
       </script>
       <script>
@@ -58,7 +65,7 @@
       </div>
     </div>
     <div class="content">
-        <div class="userstats">
+        <div id="userstats" class="userstats">
             <div class="username" id="username">
                 Placeholder
             </div>
