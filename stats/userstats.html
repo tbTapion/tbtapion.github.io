@@ -20,11 +20,9 @@
                 snapshot.docs.forEach(doc => {
                     renderUser(doc);
                 });
-            }else{
-                document.getElementById("userstats").hidden = true;
-                document.getElementById("username").hidden = true;
-                document.getElementsByClassName("database-field").hidden = true;
-
+                document.getElementById("userstats").hidden = false;
+                document.getElementById("username").hidden = false;
+                document.getElementsByClassName("database-field").hidden = false;
             }
         });
       </script>
