@@ -82,10 +82,9 @@ h1 {
     float: left;
     width:23%;
     margin:1%;
-    background-color:rgb(180, 250, 255);
+    background-color:rgb(230, 230, 230);
     cursor:pointer;
     box-shadow: 0px 1px 3px 1px #00000052;
-    border-radius: 10px;
 }
 
 #result-box:hover{
@@ -130,9 +129,8 @@ h1 {
     margin-left:auto;
     margin-top:1%;
     margin-bottom:1%;
-    background-color:rgb(180, 250, 255);
+    background-color:rgb(230, 230, 230);
     box-shadow: 0px 1px 3px 1px #00000052;
-    border-radius: 10px;
     padding-left:1%;
     padding-top:1%;
     padding-bottom:1%;
