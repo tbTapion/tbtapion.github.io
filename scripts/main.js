@@ -4,7 +4,7 @@ function renderUser(doc){
     var games = document.createElement("div");
     
     name.innerHTML = doc.data().username;
-    name.innerHTML = "Games player: " + doc.data().numberofgames;
+    games.innerHTML = "Games played: " + doc.data().numberofgames;
     name.id = 'result-text';
     games.id = 'result-text2';
     div.id = "result-box";
