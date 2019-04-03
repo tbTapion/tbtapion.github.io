@@ -4,9 +4,9 @@ function renderUser(doc){
     var games = document.createElement("div");
     
     name.innerHTML = doc.data().username;
-    name.innerHTML = doc.data().numberofgames;
+    name.innerHTML = "Games player: " + doc.data().numberofgames;
     name.id = 'result-text';
-    games.id = 'result-text';
+    games.id = 'result-text2';
     div.id = "result-box";
     div.onclick = function () {
         window.location.href = "/stats/userstats.html#" + name.innerHTML;

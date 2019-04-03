@@ -101,6 +101,16 @@ h1 {
     text-transform: uppercase;
 }
 
+#result-text {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(60,60,60);
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
 .userstats{
     position: relative;
     overflow:auto;
