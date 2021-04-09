@@ -1,23 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script>
-      function updateSearch(value){
-              window.location.replace("http://tbtapion.github.io/stats/userstats.html#" + value);
-            }
-    </script>
-  </head>
-  <body>
-    <div class="head">
-      <div class="menu">
-        <a href="/" id="link-home" class="menuitem clickable-menuitem">HOME</a>
-        <a href="/stats/" id="link-stats" class="menuitem clickable-menuitem">STATS</a>
-        <input onchange="updateSearch(this.value)" class="usersearch" type="text" placeholder="Search...">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body{
+      background-color: #101018;
+    }
+
+    #content {
+      position: absolute;
+      top:0;bottom:0;
+      left:0;right:0;
+      display:block;
+      margin: auto;
+      text-align: center;
+      color:white;
+      text-decoration: none;
+      border-top:1px white solid;
+      padding-top:30px;
+      width:max-content;
+      height:max-content;
+    }
+
+    .link-category {
+      margin-left:30px;
+      margin-right:30px;
+      display:inline-block;
+      top:0px;
+      font-family:'Open sans', 'Roboto', sans-serif;
+      vertical-align: top
+    }
+    .category-title {
+      font-size:120%;
+      margin-bottom:15px;
+    }
+    .link {
+      display:block;
+      text-decoration: none;
+      color:white;
+      font-family:'Open sans', 'Roboto', sans-serif;
+      margin-bottom:10px;
+      font-size:100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div class="link-category">
+      <div class="category-title" style="color:#ee6060">
+        socials
+      </div>
+      <a href="http://www.twitter.com" class="link">twitter</a>
+      <a href="http://www.messenger.com" class="link">messenger</a>
+      <a href="http://www.reddit.com" class="link">reddit</a>
+    </div>
+    <div class="link-category">
+      <div class="category-title" style="color:#eeee60">
+        weebs
+      </div>
+      <a href="http://www.anilist.co" class="link">anilist</a>
+      <a href="http://mangaplus.shueisha.co.jp/" class="link">mangaplus</a>
+      <a href="http://www.webtoons.com/en/" class="link">webtoon</a>
+      <a href="http://www.mangadex.org" class="link">mangadex</a>
+    </div>
+    <div class="link-category">
+      <div class="category-title" style="color:#60ee60">
+        media
+      </div>
+      <div class="link">
+        <a href="http://www.youtube.com" class="link">youtube</a>
+        <a href="https://www.twitch.tv/directory/following" class="link">twitch</a>
+        <a href="http://www.wakanim.tv" class="link">wakanim</a>
+        <a href="https://www.crunchyroll.com" class="link">crunchyroll</a>
       </div>
     </div>
-    <div class="content">
+    <div class="link-category">
+      <div class="category-title" style="color:#60eeee">
+        games
+      </div>
+      <div class="link">
+        <a href="https://mahjongsoul.yo-star.com" class="link">mahjongsoul</a>
+        <a href="https://www.krunker.io" class="link">krunker</a>
+        <a href="https://5e.tools" class="link">d&d</a>
+      </div>
     </div>
-  </body>
+    <div class="link-category">
+      <div class="category-title" style="color:#6060ee">
+        other
+      </div>
+      <div class="link">
+        <a href="http://www.reddit.com/r/linux" class="link">linux</a>
+        <a href="https://www.gmail.com" class="link">g-mail</a>
+        <a href="https://www.protonmail.com" class="link">proton</a>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
+
