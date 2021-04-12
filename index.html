@@ -9,13 +9,15 @@
       background-color: #101018;
     }
 
+    #container {
+      height:95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     #content {
-      position: absolute;
-      top:0;bottom:0;
-      left:0;right:0;
-      display:block;
-      margin: auto;
-      text-align: center;
+      overflow: auto;
       color:white;
       text-decoration: none;
       border-top:1px white solid;
@@ -47,6 +49,7 @@
   </style>
 </head>
 <body>
+<div id="container">
   <div id="content">
     <div class="link-category">
       <div class="category-title" style="color:#ee6060">
@@ -98,6 +101,6 @@
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
-
