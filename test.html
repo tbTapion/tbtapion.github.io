@@ -4,15 +4,18 @@
 </head> 
 <body>
 
-<div id="output">
+<div onload="loaded" id="output">
   
 </div>
 
 <script>
 
-$.get("localhost:5000", (data) => {
-  $("#output").text(data);
-});
+function loaded(){
+ $.get("localhost:5000", (data) => {
+   $("#output").text(data);
+  console.log(data);
+ });
+}
 
 </script>
   
