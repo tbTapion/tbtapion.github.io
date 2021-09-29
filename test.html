@@ -11,6 +11,7 @@
 <script>
 
 function loaded(){
+ console.log("Loaded! Firing off loading data!")
  $.get("localhost:5000", (data) => {
    $("#output").text(data);
   console.log(data);
