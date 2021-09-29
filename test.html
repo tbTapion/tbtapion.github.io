@@ -12,9 +12,10 @@
 
 function loaded(){
  console.log("Loaded! Firing off loading data!")
- $.get("localhost:5000", (data) => {
+ $.get("localhost:5000", (data, status) => {
+   console.log("STATUSS:::: " + status);
    $("#output").text(data);
-  console.log(data);
+  console.log("DATA:::: " + data);
  });
 }
 
