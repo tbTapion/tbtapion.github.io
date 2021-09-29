@@ -2,7 +2,7 @@
  <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head> 
-<body onload="loaded()">
+<body>
 
 <div id="output">
   
@@ -11,7 +11,7 @@
 <script>
 $(document).ready(function(){
  console.log("Loaded! Firing off loading data!")
- $.get("localhost:5000", (data, status) => {
+ $.get("http://localhost:5000", (data, status) => {
    console.log("STATUSS:::: " + status);
    $("#output").text(data);
   console.log("DATA:::: " + data);
