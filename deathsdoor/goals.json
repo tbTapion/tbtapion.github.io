@@ -13,6 +13,18 @@
                 "time": 0,
                 "tool-tip": "After opening the soul door in Mushroom Dungeon"
             },
+            "Soul Door Ceramic Manor": {
+                "time":0,
+                "tool-tip":""
+            },
+            "Soul Door Mushroom Dungeon": {
+                "time":0,
+                "tool-tip":""
+            },
+            "Soul Door Lockstone Castle": {
+                "time":0,
+                "tool-tip":""
+            },
             "Grandma": {
                 "time": 0,
                 "tool-tip": "Found at the end of Furnace"
