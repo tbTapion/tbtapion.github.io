@@ -6,11 +6,14 @@
             let letters = [];
             for(let i = 65;i<65+26;i++) letters.push(String.fromCharCode(i));
             let today = new Date();
+	console.log(letters);
 
             function createInputs(){
+		console.log("Creating inputs!");
                 const inputs = document.getElementById("inputs");
                 let letterBox;
                 letters.forEach(letter => {
+			console.log("Adding: " + letter);
                     letterBox = "<div class='input-letter'>" + letter + "</div>"
                     inputs.innerHTML += letterBox;
                 });
@@ -18,13 +21,13 @@
         </script>
     </head>
 
-    <body>
+    <body onload="createInputs()">
         <div id="container">
             <div id="header">
                 <div style="text-align: center;">Lettle</div>
             </div>
             <div id="letter-box"></div>
-            <div id="inputs" onload="createInputs()">
+            <div id="inputs">
                 
             </div>
         </div>
