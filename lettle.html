@@ -8,7 +8,12 @@
             let today = new Date();
 
             function createInputs(){
-                
+                const inputs = document.getElementById("inputs");
+                let letterBox;
+                letters.forEach(letter => {
+                    letterBox = "<div class='input-letter'>" + letter + "</div>"
+                    inputs.innerHTML += letterBox;
+                });
             }
         </script>
     </head>
