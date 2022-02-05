@@ -42,11 +42,22 @@
 
             function createInputs(){
                 const inputs = document.getElementById("inputs");
+                inputs.innerHTML += "<div>";
                 let letterBox;
+                let splitters = [10,9,0]
+                let checkIndex = 0;
+                let letterNumber = 0;
                 letters.forEach(letter => {
                     letterBox = "<div class='input-letter'>" + letter + "</div>"
+                    letterNumber += 1;
                     inputs.innerHTML += letterBox;
+                    if(letterNumber == splitters[checkIndex]){
+                        inputs.innerHTML += "</div></div>";
+                        letterNumber = 0;
+                        checkIndex += 1;
+                    }
                 });
+                inputs.innerHTML += "</div>";
             }
         </script>
 
