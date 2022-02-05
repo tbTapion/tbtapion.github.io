@@ -5,20 +5,64 @@
         <script>
             let letters = [];
             for(let i = 65;i<65+26;i++) letters.push(String.fromCharCode(i));
-            let today = new Date();
-	console.log(letters);
+            const todaysLetter = getLetter();
+
+            function* myRandom(seed) {
+                let value = seed;
+
+                while(true) {
+                    value = value * 16807 % 1386383
+                    yield value / 1386383;
+                }
+
+            };
+
+            function calculateLetter(daysSinceStart){
+                let rand = myRandom(daysSinceStart);
+                let letterValue = Math.floor(rand.next().value * 26);
+	            return letterValue;
+            }
+
+            function daysSinceStart(){
+                const startDate = new Date(2022, 0, 0);
+                const today = new Date();
+                const oneDay = 24 * 60 * 60 * 1000
+
+                let diff = Math.abs(startDate - today);
+                return Math.floor(diff / oneDay);
+            }
+
+            function getLetter(){
+                let days = daysSinceStart();
+                let letterVal = calculateLetter(days);
+                let letter = String.fromCharCode(65 + letterVal);
+                return letter;
+            }
 
             function createInputs(){
-		console.log("Creating inputs!");
                 const inputs = document.getElementById("inputs");
                 let letterBox;
                 letters.forEach(letter => {
-			console.log("Adding: " + letter);
                     letterBox = "<div class='input-letter'>" + letter + "</div>"
                     inputs.innerHTML += letterBox;
                 });
             }
         </script>
+
+        <style>
+            body {
+                background-color: #202020;
+            }
+            #container {
+                width:50vw;
+            }
+
+            .input-letter {
+                width:1vw;
+                height:1vw;
+                border: 1px solid #AAAAAA;
+            }
+        </style>
     </head>
 
     <body onload="createInputs()">
