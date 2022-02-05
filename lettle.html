@@ -48,7 +48,7 @@
                 let checkIndex = 0;
                 let letterNumber = 0;
                 letters.forEach(letter => {
-                    letterBox = "<div class='input-letter'>" + letter + "</div>"
+                    letterBox = "<div class='input-letter'><div>" + letter + "</div></div>"
                     letterNumber += 1;
                     inputs.innerHTML += letterBox;
                     if(letterNumber == splitters[checkIndex]){
