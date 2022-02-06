@@ -98,17 +98,17 @@
 
                   if(selectedAnswer == todaysLetter){
                     notCompleted = false;
-                    letterbox.style["background-color"] = "#80DD80";
+                    letterbox.style["background-color"] = "#40DD40";
                   }else{
-                    letterbox.style["background-color"] = "#DD8080";
+                    letterbox.style["background-color"] = "#AA8020";
+                    lifeArray.shift();
+                    lifeArray.push(0);
                     let heart = lifeArray.find(life => life == 1);
-                    if(heart){
-                      lifeArray.shift();
-                      lifeArray.push(0);
-                      createLives();
-                    }else{
+                    if(!heart){
                       notCompleted = false;
+                      letterbox.style["background-color"] = "#EE2020";
                     }
+                    createLives();
                   }
                 }
             }
@@ -223,6 +223,7 @@
             <div id="header">
                 <div style="text-align: center;">Lettle</div>
             </div>
+            <div style="color:white;">Still under development</div>
             <div id="lives">
             </div>
             <div id="letterbox-container">
