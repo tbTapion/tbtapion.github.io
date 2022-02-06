@@ -9,6 +9,7 @@
             const todaysLetter = getLetter();
             let selectedAnswer;
             let notCompleted = true;
+            let lifeArray = [1,1,1,1,1];
 
 
             function* myRandom(seed) {
@@ -43,6 +44,19 @@
                 return letter;
             }
 
+            function createLives(){
+                const lives = document.getElementById("lives");
+                let livesElements = "";
+                lifeArray.forEach(life => {
+                    if(life == 1){
+                        livesElements += "<div class='heart red'>&hearts;</div>"
+                    }else{
+                        livesElements += "<div class='heart black'>&hearts;</div>"
+                    }
+                });
+                lives.innerHTML = livesElements;
+            }
+
             function createInputs(){
                 const inputs = document.getElementById("inputs");
                 inputs.innerHTML += "<div>";
@@ -65,8 +79,13 @@
                 //setLetter();
             }
 
+            function createElements(){
+              createInputs();
+              createLives();
+            }
+
             function inputClick(event){
-                if(notCompleted){
+                if(notCompleted == true){
                   let letter = event.innerHTML;
                   document.getElementById("letterbox").innerHTML = letter;
                   selectedAnswer = letter;
@@ -74,7 +93,7 @@
             }
 
             function submitAnswer(){
-                if(notCompleted){
+                if(notCompleted == true){
                   let letterbox = document.getElementById("letterbox");
 
                   if(selectedAnswer == todaysLetter){
@@ -82,7 +101,14 @@
                     letterbox.style["background-color"] = "#80DD80";
                   }else{
                     letterbox.style["background-color"] = "#DD8080";
-                    notCompleted = true;
+                    let heart = lifeArray.find(life => life == 1);
+                    if(heart){
+                      lifeArray.shift();
+                      lifeArray.push(0);
+                      createLives();
+                    }else{
+                      notCompleted = false;
+                    }
                   }
                 }
             }
@@ -109,7 +135,7 @@
             #letterbox-container {
               display:block;
               text-align: center;
-              padding-top:10%;
+              padding-top:2%;
               padding-bottom:10%;
               vertical-align: middle;
             }
@@ -155,6 +181,26 @@
                 background-color: #DDDDAA;
             }
 
+            #lives {
+              padding-top:8%;
+            }
+
+            .heart {
+              position: relative;
+              display:inline-block;
+              font-size: 200%;
+              padding: 4px;
+              text-shadow: -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111, 1px 1px 0 #111;
+            }
+
+            .red{
+              color:red;
+            }
+
+            .black {
+              color:black;
+            }
+
             #submit {
               position: relative;
               display:inline-block;
@@ -172,10 +218,12 @@
         </style>
     </head>
 
-    <body onload="createInputs()">
+    <body onload="createElements()">
         <div id="container">
             <div id="header">
                 <div style="text-align: center;">Lettle</div>
+            </div>
+            <div id="lives">
             </div>
             <div id="letterbox-container">
                 <div id="letterbox"></div>
