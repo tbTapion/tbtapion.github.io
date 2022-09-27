@@ -123,7 +123,7 @@
                 return;
             };
             list.innerText = "Connecting!"
-            let object = await fetch("https://" + ipToConnect + "/get-matches");
+            let object = await fetch("https://" + ipToConnect + "/get-matches", {"Access-Control-Allow-Origin": "*"});
             list.innerText = "Found Matches! Parsing..."
             let myText = await object.text();
             matches = JSON.parse(myText);
