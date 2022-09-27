@@ -1,52 +1,173 @@
 <!DOCTYPE html>
+
 <head>
+
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
     </head>
-    <body>
-        <nav class="w3-sidebar w3-bar-block w3-card" style="width:100%" id="mySidebar">
-            <div class="w3-bar-item w3-button w3-hover-theme w3-theme" onclick="closeSidebar()">
-                <div class="w3-xxlarge w3-right">&#9776;</div>
-            </div>
-            <a class="w3-bar-item w3-button w3-large w3-center" href="#">MATCHES</a>
-            <a class="w3-bar-item w3-button w3-large w3-theme-l4 w3-center" href="#">SCORES</a>
-            <a class="w3-bar-item w3-button w3-large w3-center" href="#">CONFIG</a>
-        </nav>
 
-        <header class="w3-bar w3-card w3-theme">
-            <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
-            <h1 class="w3-bar-item"><span id="currentView">Matches</span></h1>
-        </header>
+<body>
+    <nav class="w3-sidebar w3-bar-block w3-card" style="width:100%" id="mySidebar">
+        <div class="w3-bar-item w3-button w3-hover-theme w3-theme" onclick="closeSidebar()">
+            <div class="w3-xxlarge w3-right">&#9776;</div>
+        </div>
+        <a class="w3-bar-item w3-button w3-large w3-center" href="#" onclick="openMatches()">MATCHES</a>
+        <a class="w3-bar-item w3-button w3-large w3-theme-l4 w3-center" href="#" onclick="openScores()">SCORES</a>
+        <a class="w3-bar-item w3-button w3-large w3-center" href="#" onclick="openSettings()">CONFIG</a>
+    </nav>
+
+    <header class="w3-bar w3-card w3-theme">
+        <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+        <h1 class="w3-bar-item"><span id="currentView">Matches</span></h1>
+    </header>
+    <div id="matches-view" style="display:none;">
         <div id="matches">
-            <div id="matches">
-                <div id="matches-list" class="w3-center w3-bar w3-theme-l5">
+            <div class="w3-center w3-bar w3-theme-l5">
+                <ul class="w3-ul" id="matches-list">
                     No matches to display
-                </div>
-                <button id="get-matches" class="w3-btn w3-theme-d5 w3-bar w3-large">
-                    Get Matches
-                </button>
+                </ul>
             </div>
-            <div id="selected-match">
-                
-            </div>
+            <button id="get-matches" class="w3-btn w3-theme-d5 w3-bar w3-large" onclick="getMatches()">
+                Get Matches
+            </button>
         </div>
-        <div id="scores" style="display:none;">
+        <div id="selected-match" class="w3-container" style="display:none;">
+            <br>
+            <label class="w3-text-blue w3-large">Round</label>
+            <input type="text" id="selected-round" class="w3-input" disabled>
+            <br>
+            <label class="w3-text-blue w3-large">Player 1</label>
+            <input type="text" id="selected-player1" class="w3-input" disabled>
+            <br>
+            <label class="w3-text-blue w3-large">Player 2</label>
+            <input type="text" id="selected-player2" class="w3-input" disabled>
+            <br>
+            <button class="w3-bar w3-btn w3-xlarge w3-green" onclick="openSelected()">Open Scores</button>
+            <button class="w3-bar w3-btn w3-xlarge w3-theme-d4" onclick="openMatches()">Back</button>
+        </div>
+    </div>
+    <div id="scores" class="w3-container" style="display:none;">
+    </div>
+    <div id="settings" class="w3-container">
+        <br>
+        <label class="w3-text-blue w3-large">Current IP:</label><label class="w3-large"><span id="currentIP" class="w3-margin-left"></span></label>
+        <br>
+        <br>
+        <label class="w3-text-blue w3-large">IP to Connect</label>
+        <input type="text" id="ip-connect" class="w3-input">
+        <br>
+        <button class="w3-btn w3-green w3-bar" onclick="setIp()">Set IP</button>
+    </div>
+    <script>
+        let selectedMatch;
+        let matches;
+        let ipToConnect;
 
-        </div>
-        <div id="settings" style="display:none;">
+        function setIp(){
+            ipToConnect = document.getElementById("ip-connect").value;
+            document.getElementById("currentIP").innerText = ipToConnect;
+            ipToConnect = ipToConnect != "" ? ipToConnect : null;
+            console.log(ipToConnect);
+        }
 
-        </div>
-        <script>
+        closeSidebar();
+        function openSidebar() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        function openMatches() {
+            document.getElementById("scores").style.display = "none";
+            document.getElementById("settings").style.display = "none";
+            document.getElementById("selected-match").style.display = "none";
+            document.getElementById("matches").style.display = "block";
+            document.getElementById("matches-view").style.display = "block";
+            document.getElementById("currentView").innerText = "Matches";
             closeSidebar();
-            function openSidebar() {
-              document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function openSelected(){
+            openScores();
+
+        }
+
+        function openScores() {
+            document.getElementById("scores").style.display = "block";
+            document.getElementById("settings").style.display = "none";
+            document.getElementById("selected-match").style.display = "none";
+            document.getElementById("matches").style.display = "none";
+            document.getElementById("matches-view").style.display = "none";
+            document.getElementById("currentView").innerText = "Scores";
+            closeSidebar();
+        }
+
+        function openSettings() {
+            document.getElementById("scores").style.display = "none";
+            document.getElementById("settings").style.display = "block";
+            document.getElementById("selected-match").style.display = "none";
+            document.getElementById("matches").style.display = "none";
+            document.getElementById("matches-view").style.display = "none";
+            document.getElementById("currentView").innerText = "Config";
+            closeSidebar();
+        }
+
+        async function getMatches(){
+            let list = document.getElementById("matches-list");
+            if(ipToConnect === null || ipToConnect === undefined || ipToConnect === ""){
+                list.innerText = "Set IP first in Config!";
+                return;
+            };
+            list.innerText = "Connecting!"
+            let object = await fetch("http://" + ipToConnect + "/get-matches");
+            list.innerText = "Found Matches! Parsing..."
+            let myText = await object.text();
+            matches = JSON.parse(myText);
+            parseMatchesList();
+        }
+
+        function parseMatchesList(){
+            let matchesList = document.getElementById("matches-list");
+            if(matches.length == 0) {
+                matchesList.innerText = "No matches to display";
+                return;
             }
-            
-            function closeSidebar() {
-              document.getElementById("mySidebar").style.display = "none";
+            matchesList.innerText = "";
+            for(let i = 0; i<matches.length;i++){
+                let element = matches[i];
+                let li = document.createElement("li");
+                let div = document.createElement("div");
+                let divRound = document.createElement("div");
+                divRound.innerText = element.round_name;
+                div.appendChild(divRound);
+                let divPlayers = document.createElement("div");
+                divPlayers.innerText = element.p1_name + " vs " + element.p2_name;
+                div.appendChild(divPlayers)
+                div.id = "match-"+i;
+                div.classList.add("match")
+                li.appendChild(div)
+                matchesList.appendChild(li);
+            };
+            let matchDivs = document.getElementsByClassName("match");
+            for(let i = 0; i<matchDivs.length;i++){
+                let element = matchDivs[i];
+                element.addEventListener("click", (event) => {
+                    let matchId = event.target.parentNode.id.split("-")[1];
+                    let matchIdParsed = parseInt(matchId);
+                    if(isNaN(matchIdParsed)) return null;
+                    selectedMatch = matches[matchIdParsed];
+                    document.getElementById("selected-round").value = selectedMatch.round_name;
+                    document.getElementById("selected-player1").value = selectedMatch.p1_name;
+                    document.getElementById("selected-player2").value = selectedMatch.p2_name;
+                    document.getElementById("selected-match").style.display = "block";
+                    document.getElementById("matches").style.display = "none";
+                });
             }
-        </script>
-    </body>
+        }
+    </script>
+</body>
 </head>
