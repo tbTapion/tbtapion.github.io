@@ -17,3 +17,5 @@ class AppState {
         }
     }
 }
+
+window.appState = new AppState();

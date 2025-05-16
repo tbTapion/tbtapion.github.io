@@ -11,7 +11,7 @@ const routes = {
     },
 }
 
-const appState = new AppState();
+const appState = window.appState;
 const url = new URL(window.location.href);
 
 Object.keys(routes).forEach((key) => {
@@ -22,7 +22,7 @@ Object.keys(routes).forEach((key) => {
     }
 })
 
-const router = {
+window.router = {
     replace(target) {
         window.location.replace("/mkth"+target);
     }
